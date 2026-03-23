@@ -60,25 +60,46 @@
     </div>
 
     <div id="signInForm">
-        <h1>Create Your Account 🌐</h1>
+        <h1>Create Your Account 🌍</h1>
         <input type="text" id="fullname" placeholder="Your name..."><br><br>
-        <input type="text" id="username" placeholder="Choose a username..."><br><br>
+        <input type="email" id="username" placeholder="Your email..."><br><br>
         <input type="password" id="password" placeholder="Create a password..."><br><br>
         <button id="createBtn">CREATE MY ACCOUNT</button>
     </div>
 
     <div id="loginForm">
         <h1>Welcome Back! 🌍</h1>
-        <input type="text" id="loginUsername" placeholder="Your username..."><br><br>
+        <input type="email" id="loginUsername" placeholder="Your email..."><br><br>
         <input type="password" id="loginPassword" placeholder="Your password..."><br><br>
         <button id="loginSubmit">LOGIN</button>
     </div>
 
     <div id="welcome">
-    <h1>Welcome to EduWorld! 🌍</h1>
-    <p id="welcomeMessage"></p>
-    <button id="playBtn">START PLAYING! 🎮</button>
-</div>
+        <h1>Welcome to EduWorld! 🌍</h1>
+        <p id="welcomeMessage"></p>
+        <button id="playBtn">START PLAYING! 🎮</button>
+    </div>
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+        import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyALbQ2ieNt28SLiy7RUx2WtrEs95AZ9ZIc",
+            authDomain: "eduworld-1be9c.firebaseapp.com",
+            projectId: "eduworld-1be9c",
+            storageBucket: "eduworld-1be9c.firebasestorage.app",
+            messagingSenderId: "729052709954",
+            appId: "1:729052709954:web:00050fb1cdab09112f59db"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+
+        window.firebaseAuth = auth;
+        window.createUser = createUserWithEmailAndPassword;
+        window.signInUser = signInWithEmailAndPassword;
+    </script>
 
 </body>
 </html>

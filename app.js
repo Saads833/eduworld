@@ -24,20 +24,7 @@ document.getElementById("signinBtn").addEventListener("click", function() {
     document.getElementById("signInForm").style.display = "block"
 })
 
-document.getElementById("loginSubmit").addEventListener("click", function() {
-    let username = document.getElementById("loginUsername").value
-    let password = document.getElementById("loginPassword").value
-
-    if (username === "" || password === "") {
-        alert("Please fill in all fields!")
-    } else {
-        document.getElementById("loginForm").style.display = "none"
-        document.getElementById("welcome").style.display = "block"
-        document.getElementById("welcomeMessage").textContent = "Hello, " + username + "! Ready to play? 🎮"
-    }
-})
-
-document.getElementById("createBtn").addEventListener("click", function() {
+document.getElementById("createBtn").addEventListener("click", async function() {
     let name = document.getElementById("fullname").value
     let username = document.getElementById("username").value
     let password = document.getElementById("password").value
@@ -45,8 +32,31 @@ document.getElementById("createBtn").addEventListener("click", function() {
     if (name === "" || username === "" || password === "") {
         alert("Please fill in all fields!")
     } else {
-        document.getElementById("signInForm").style.display = "none"
-        document.getElementById("welcome").style.display = "block"
-        document.getElementById("welcomeMessage").textContent = "Welcome, " + name + "! Ready to play? 🎮"
+        try {
+            await window.createUser(window.firebaseAuth, username, password)
+            document.getElementById("signInForm").style.display = "none"
+            document.getElementById("welcome").style.display = "block"
+            document.getElementById("welcomeMessage").textContent = "Welcome, " + name + "! Ready to play? 🎮"
+        } catch (error) {
+            alert("Error: " + error.message)
+        }
+    }
+})
+
+document.getElementById("loginSubmit").addEventListener("click", async function() {
+    let username = document.getElementById("loginUsername").value
+    let password = document.getElementById("loginPassword").value
+
+    if (username === "" || password === "") {
+        alert("Please fill in all fields!")
+    } else {
+        try {
+            await window.signInUser(window.firebaseAuth, username, password)
+            document.getElementById("loginForm").style.display = "none"
+            document.getElementById("welcome").style.display = "block"
+            document.getElementById("welcomeMessage").textContent = "Welcome back, " + username + "! Ready to play? 🎮"
+        } catch (error) {
+            alert("Error: " + error.message)
+        }
     }
 })
