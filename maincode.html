@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="app.js" defer></script>
+    <title>EduWorld</title>
+</head>
+<body>
+
+    <div id="logo">
+        <h1>🌍 EduWorld</h1>
+    </div>
+
+    <div id="step1">
+        <h1>Where did you find EduWorld? 🌍🌐</h1>
+        <label>
+            <input type="radio" name="source" value="friend"> From a friend
+        </label><br>
+        <label>
+            <input type="radio" name="source" value="parents"> From my parents
+        </label><br>
+        <label>
+            <input type="radio" name="source" value="school"> From school
+        </label><br>
+        <label>
+            <input type="radio" name="source" value="other"> Other:
+            <input type="text" name="other_source" placeholder="Type here...">
+        </label><br>
+        <button id="next1">Next</button>
+    </div>
+
+    <div id="step2">
+        <h1>What is your grade?</h1>
+        <label>
+            <input type="radio" name="grade" value="1"> 1st grade
+        </label><br>
+        <label>
+            <input type="radio" name="grade" value="2"> 2nd grade
+        </label><br>
+        <label>
+            <input type="radio" name="grade" value="3"> 3rd grade
+        </label><br>
+        <label>
+            <input type="radio" name="grade" value="4"> 4th grade
+        </label><br>
+        <label>
+            <input type="radio" name="grade" value="5"> 5th grade
+        </label><br>
+        <label>
+            <input type="radio" name="grade" value="6"> 6th grade
+        </label><br>
+        <button id="next2">Next</button>
+    </div>
+
+    <div id="step3">
+        <button class="button button1" id="loginBtn">LOGIN</button>
+        <button class="button button2" id="signinBtn">SIGN IN</button>
+    </div>
+
+    <div id="signInForm">
+        <h1>Create Your Account 🌐</h1>
+        <input type="text" id="fullname" placeholder="Your name..."><br><br>
+        <input type="text" id="username" placeholder="Choose a username..."><br><br>
+        <input type="password" id="password" placeholder="Create a password..."><br><br>
+        <button id="createBtn">CREATE MY ACCOUNT</button>
+    </div>
+
+    <div id="loginForm">
+        <h1>Welcome Back! 🌍</h1>
+        <input type="text" id="loginUsername" placeholder="Your username..."><br><br>
+        <input type="password" id="loginPassword" placeholder="Your password..."><br><br>
+        <button id="loginSubmit">LOGIN</button>
+    </div>
+
+    <div id="welcome">
+    <h1>Welcome to EduWorld! 🌍</h1>
+    <p id="welcomeMessage"></p>
+    <button id="playBtn">START PLAYING! 🎮</button>
+</div>
+
+</body>
+</html>
