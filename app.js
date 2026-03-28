@@ -98,3 +98,46 @@ document.getElementById("backHomeBtn").addEventListener("click", function() {
     document.getElementById("mathScreen").style.display = "none"
     document.getElementById("homeScreen").style.display = "flex"
 })
+
+document.getElementById("startMathBtn").addEventListener("click", function() {
+    let questions = [
+        "What is 12 × 7?",
+        "What is 144 ÷ 12?",
+        "What is 25% of 200?",
+        "What is 15²?",
+        "If a train travels 60 km/h for 2.5 hours, how far does it go?"
+    ]
+
+    let random = questions[Math.floor(Math.random() * questions.length)]
+
+    document.getElementById("mathStatus").textContent = "Answer this question! 🧠"
+    document.getElementById("questionText").textContent = random
+    document.getElementById("questionBox").style.display = "block"
+    document.getElementById("startMathBtn").style.display = "none"
+})
+
+document.getElementById("submitAnswer").addEventListener("click", function() {
+    let answer = document.getElementById("answerInput").value.trim()
+    let question = document.getElementById("questionText").textContent
+
+    if (answer === "") {
+        document.getElementById("feedback").textContent = "Please write your answer! ✏️"
+        return
+    }
+
+    let correct = false
+
+    if (question.includes("12 × 7") && answer === "84") correct = true
+    if (question.includes("144 ÷ 12") && answer === "12") correct = true
+    if (question.includes("25%") && answer === "50") correct = true
+    if (question.includes("15²") && answer === "225") correct = true
+    if (question.includes("train") && answer === "150") correct = true
+
+    if (correct) {
+        document.getElementById("feedback").textContent = "✅ Correct! +10 points! 🏆"
+        document.getElementById("feedback").style.color = "lightgreen"
+    } else {
+        document.getElementById("feedback").textContent = "❌ Wrong! Try again!"
+        document.getElementById("feedback").style.color = "red"
+    }
+})
