@@ -4,6 +4,7 @@ document.getElementById("signInForm").style.display = "none"
 document.getElementById("loginForm").style.display = "none"
 document.getElementById("welcome").style.display = "none"
 document.getElementById("homeScreen").style.display = "none"
+document.getElementById("mathScreen").style.display = "none"
 
 document.getElementById("next1").addEventListener("click", function() {
     document.getElementById("step1").style.display = "none"
@@ -81,4 +82,19 @@ document.getElementById("logoutBtn").addEventListener("click", function() {
 
 document.getElementById("exitBtn").addEventListener("click", function() {
     window.close()
+})
+
+document.querySelectorAll(".gameCard").forEach(function(card) {
+    card.addEventListener("click", function() {
+        let subject = this.textContent.trim()
+        if (subject.includes("Math")) {
+            document.getElementById("homeScreen").style.display = "none"
+            document.getElementById("mathScreen").style.display = "flex"
+        }
+    })
+})
+
+document.getElementById("backHomeBtn").addEventListener("click", function() {
+    document.getElementById("mathScreen").style.display = "none"
+    document.getElementById("homeScreen").style.display = "flex"
 })
