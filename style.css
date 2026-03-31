@@ -265,3 +265,19 @@ label {
     font-size: 22px;
     font-family: Arial, sans-serif;
 }
+
+#timerBox {
+    background-color: white;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#timerText {
+    color: #1a6b9a;
+    font-size: 22px;
+    margin: 0;
+}

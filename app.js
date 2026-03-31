@@ -48,7 +48,7 @@ document.getElementById("loginSubmit").addEventListener("click", async function(
     let username = document.getElementById("loginUsername").value
     let password = document.getElementById("loginPassword").value
 
-    if (username === "" || password === "") {
+    if (username === "" || username === "" || password === "") {
         alert("Please fill in all fields!")
     } else {
         try {
@@ -114,6 +114,25 @@ document.getElementById("startMathBtn").addEventListener("click", function() {
     document.getElementById("questionText").textContent = random
     document.getElementById("questionBox").style.display = "block"
     document.getElementById("startMathBtn").style.display = "none"
+
+    let timeLeft = 30
+    document.getElementById("timerText").textContent = "⏱️ " + timeLeft
+
+    let timer = setInterval(function() {
+        timeLeft--
+        document.getElementById("timerText").textContent = "⏱️ " + timeLeft
+
+        if (timeLeft <= 10) {
+            document.getElementById("timerText").style.color = "red"
+        }
+
+        if (timeLeft <= 0) {
+            clearInterval(timer)
+            document.getElementById("feedback").textContent = "⏰ Time's up!"
+            document.getElementById("feedback").style.color = "red"
+            document.getElementById("submitAnswer").style.display = "none"
+        }
+    }, 1000)
 })
 
 document.getElementById("submitAnswer").addEventListener("click", function() {

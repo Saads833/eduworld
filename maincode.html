@@ -82,36 +82,36 @@
 
     <div id="homeScreen">
 
-    <!-- Left Sidebar -->
-    <div id="sidebar">
-        <div id="homeBtn">🏠</div>
-        <div id="avatarBtn">👤</div>
-        <div id="menuBtn">•••</div>
-    </div>
-
-    <!-- Main Content -->
-    <div id="mainContent">
-        <h2>🎮 Recommended</h2>
-        <div id="gamesGrid">
-            <div class="gameCard">📐 Math</div>
-            <div class="gameCard">⚗️ Physics</div>
-            <div class="gameCard">🇫🇷 French</div>
-            <div class="gameCard">📖 History</div>
-            <div class="gameCard">🌍 Geography</div>
-            <div class="gameCard">🔬 Science</div>
+        <div id="sidebar">
+            <div id="homeBtn">🏠</div>
+            <div id="avatarBtn">👤</div>
+            <div id="menuBtn">•••</div>
         </div>
-    </div>
 
-    <!-- Dropdown Menu (hidden by default) -->
-    <div id="dropMenu">
-        <button id="systemBtn">⚙️ System</button>
-        <button id="logoutBtn">🚪 Logout</button>
-        <button id="exitBtn">🚫 Exit</button>
-    </div>
+        <div id="mainContent">
+            <h2>🎮 Recommended</h2>
+            <div id="gamesGrid">
+                <div class="gameCard">📐 Math</div>
+                <div class="gameCard">⚗️ Physics</div>
+                <div class="gameCard">🇫🇷 French</div>
+                <div class="gameCard">📖 History</div>
+                <div class="gameCard">🌍 Geography</div>
+                <div class="gameCard">🔬 Science</div>
+            </div>
+        </div>
 
-</div>
+        <div id="dropMenu">
+            <button id="systemBtn">⚙️ System</button>
+            <button id="logoutBtn">🚪 Logout</button>
+            <button id="exitBtn">🚫 Exit</button>
+        </div>
+
+    </div>
 
     <div id="mathScreen">
+        <div id="timerBox">
+            <h2 id="timerText">⏱️ 30</h2>
+        </div>
         <h1>🔢 Math World</h1>
         <p id="mathStatus">Get ready for a math challenge!</p>
         <div id="questionBox" style="display:none">
@@ -122,7 +122,7 @@
         </div>
         <button id="startMathBtn">START GAME 🎮</button>
         <button id="backHomeBtn">🏠 Back</button>
-</div>
+    </div>
 
     <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
